@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Col, Container, Row } from "reactstrap";
 import TradeInfoList from "./TradeInfoList";
 import NewTradeInfoModal from "./NewTradeInfoModal";
+import PdfControl from "./PdfControl";
 
 import axios from "axios";
 
@@ -39,7 +40,10 @@ class Home extends Component {
           <Col>
             <NewTradeInfoModal create={true} resetState={this.resetState} />
           </Col>
-        </Row>
+          <Col>
+            <PdfControl>resetState={this.resetState}</PdfControl>
+          </Col>
+        </Row>        
       </Container>
     );
   }

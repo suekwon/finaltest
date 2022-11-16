@@ -18,10 +18,15 @@ from django.urls import path, include
 from rest_framework import routers
 from tradeInfo import views
 
+
+
+
 router = routers.DefaultRouter()
 router.register(r'tradeinfo', views.TradeInfoView)
+# router.register(r'uploads', views.model_form_upload)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)),
+    # path('upload/', include(router.urls)),
 ]

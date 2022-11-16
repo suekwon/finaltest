@@ -3,6 +3,7 @@ from rest_framework import viewsets
 from .serializers import TradeInfoSerializer
 from .models import TradeInfo
 
+
 # Create your views here.
 
 class TradeInfoView(viewsets.ModelViewSet):
