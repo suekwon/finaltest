@@ -7,7 +7,7 @@ class NewTradeInfoModal extends Component {
     modal: false,
   };
 
-  toggle = () => {
+  toggle = () => {    
     this.setState((previous) => ({
       modal: !previous.modal,
     }));

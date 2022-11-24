@@ -28,7 +28,7 @@ class TradeInfoList extends Component {
             </tr>
           ) : (
             tradeinfos.map((tradeinfo) => (
-              <tr key={tradeinfo.pk}>
+              <tr key={tradeinfo.trade_id}>
                 <td>{tradeinfo.trade_id}</td>
                 <td>{tradeinfo.party1}</td>
                 <td>{tradeinfo.party2}</td>

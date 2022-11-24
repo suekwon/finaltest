@@ -16,9 +16,9 @@ class NewTradeInfoForm extends React.Component {
   };
 
   componentDidMount() {
+    console.log("###### NewTradeInfoForm DidMount: ", this.props.tradeinfo);
     if (this.props.tradeinfo) {
-      const { trade_id, party1, party2, prod_class, prod_type, trade_dt } =
-        this.props.tradeinfo;
+      const { trade_id, party1, party2, prod_class, prod_type, trade_dt } = this.props.tradeinfo;
       this.setState({
         trade_id,
         party1,
@@ -44,8 +44,8 @@ class NewTradeInfoForm extends React.Component {
 
   editTradeInfo = (e) => {
     e.preventDefault();
-    console.log("#######  editTradeInfo: ", this.state);
-    axios.put(API_URL + this.state.trade_id, this.state).then(() => {
+    console.log("#######  editTradeInfo: ", this.state.trade_id);
+    axios.put(API_URL + this.state.trade_id +"/", this.state).then(() => {
       this.props.resetState();
       this.props.toggle();
     });
