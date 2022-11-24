@@ -38,12 +38,11 @@ class NewTradeInfoModal extends Component {
         {button}
         <Modal isOpen={this.state.modal} toggle={this.toggle}>
           <ModalHeader toggle={this.toggle}>{title}</ModalHeader>
-
           <ModalBody>
             <NewTradeInfoForm
               resetState={this.props.resetState}
               toggle={this.toggle}
-              student={this.props.tradeinfo}
+              tradeinfo={this.props.tradeinfo}
             />
           </ModalBody>
         </Modal>

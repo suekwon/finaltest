@@ -16,8 +16,9 @@ class ConfirmRemovalModal extends Component {
     }));
   };
 
-  deleteStudent = (trade_id) => {
-    axios.delete(API_URL + trade_id).then(() => {
+  deleteTradeInfo = (pk) => {
+    console.log("#### ConfirmRemovalModal: ", pk);
+    axios.delete(API_URL + pk).then(() => {
       this.props.resetState();
       this.toggle();
     });
@@ -41,7 +42,7 @@ class ConfirmRemovalModal extends Component {
             <Button
               type="button"
               color="primary"
-              onClick={() => this.deleteStudent(this.props.trade_id)}
+              onClick={() => this.deleteTradeInfo(this.props.trade_id)}
             >
               Yes
             </Button>

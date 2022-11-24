@@ -8,4 +8,4 @@ from .models import TradeInfo
 
 class TradeInfoView(viewsets.ModelViewSet):
     serializer_class = TradeInfoSerializer
-    queryset = TradeInfo.objects.all()
+    queryset = TradeInfo.objects.all().order_by('prod_class')

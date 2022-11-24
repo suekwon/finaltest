@@ -16,17 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+# from tradeInfo.views import TradeInfoView
 from tradeInfo import views
 
 
 
 
 router = routers.DefaultRouter()
+# router.register("tradeinfo", TradeInfoView, basename='tradeinfoview')
 router.register(r'tradeinfo', views.TradeInfoView)
-# router.register(r'uploads', views.model_form_upload)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
+    path('', include(router.urls)),
+    # path('tradeinfo/', views.trade_list),
+    # path('tradeinfo/<int:pk>', views.trade_detail),
     # path('upload/', include(router.urls)),
 ]

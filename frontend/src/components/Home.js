@@ -18,7 +18,10 @@ class Home extends Component {
   }
 
   getTradeInfos = () => {
-    axios.get(API_URL).then((res) => this.setState({ tradeinfos: res.data }));
+    axios
+      .get(API_URL)
+      .then((res) => this.setState({ tradeinfos: res.data }))
+      .catch((err) => console.log(err));
   };
 
   resetState = () => {
@@ -43,7 +46,7 @@ class Home extends Component {
           <Col>
             <PdfControl>resetState={this.resetState}</PdfControl>
           </Col>
-        </Row>        
+        </Row>
       </Container>
     );
   }

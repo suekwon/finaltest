@@ -10,40 +10,40 @@ class TradeInfoList extends Component {
       <Table dark>
         <thead>
           <tr>
+            <th>Trade ID</th>
             <th>Party1</th>
             <th>Party2</th>
             <th>Product class</th>
             <th>Product type</th>
             <th>Trade date</th>
-            <th>Input date</th>
             <th></th>
           </tr>
         </thead>
         <tbody>
           {!tradeinfos || tradeinfos.length <= 0 ? (
             <tr>
-              <td colSpan="6" align="center">
+              <td colSpan="7" align="center">
                 <b>Ops, no one here yet</b>
               </td>
             </tr>
           ) : (
-            tradeinfos.map((tradeinfos) => (
-              <tr key={tradeinfos.trade_id}>
-                <td>{tradeinfos.party1}</td>
-                <td>{tradeinfos.party2}</td>
-                <td>{tradeinfos.prod_class}</td>
-                <td>{tradeinfos.prod_type}</td>
-                <td>{tradeinfos.trade_dt}</td>
-                <td>{tradeinfos.input_dt}</td>
+            tradeinfos.map((tradeinfo) => (
+              <tr key={tradeinfo.pk}>
+                <td>{tradeinfo.trade_id}</td>
+                <td>{tradeinfo.party1}</td>
+                <td>{tradeinfo.party2}</td>
+                <td>{tradeinfo.prod_class}</td>
+                <td>{tradeinfo.prod_type}</td>
+                <td>{tradeinfo.trade_dt}</td>
                 <td align="center">
                   <NewTradeInfoModal
                     create={false}
-                    tradeinfos={tradeinfos}
+                    tradeinfo={tradeinfo}
                     resetState={this.props.resetState}
                   />
                   &nbsp;&nbsp;
                   <ConfirmRemovalModal
-                    pk={tradeinfos.trade_id}
+                    trade_id={tradeinfo.trade_id}
                     resetState={this.props.resetState}
                   />
                 </td>
